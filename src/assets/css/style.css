@@ -1,0 +1,16 @@
+h2 {
+    font-size: 3rem;
+    color:#7af7d5;
+}
+.logo{
+    width: 30rem;
+    position:relative;
+    right: 3rem;
+}
+
+.tarjeta{
+    background-color:#7af7d5;
+}
+.borde-tarjeta{
+    background-color:#4496aa;
+}

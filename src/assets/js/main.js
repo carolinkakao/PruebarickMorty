@@ -1,8 +1,9 @@
-import "../../assets/scss/style.scss";
+import "../../assets/css/style.css";
 import "regenerator-runtime/runtime.js";
 
 import Serie from "./Serie";
 import Personaje from "./Personaje";
+
 
 const llamarPersonajes = (() => {
   const urlBase = "https://rickandmortyapi.com/api";
@@ -25,21 +26,26 @@ const llamarPersonajes = (() => {
   };
 
   const funcionPublica1 = async() => {
-    const serie = new Serie("Rick and Morty");
-    
+   
     const resultadosAPI = await dataPersonajes(urlBase, "/character");
     cantidadPersonajes = resultadosAPI.length;
+    const serie = new Serie("Rick and Morty");
 
-    resultadosAPI.forEach(personaje => {
-      const per = new Personaje(personaje.id, personaje.name, personaje.species, personaje.image);
-      serie.agregarPersonajes(per);
+   resultadosAPI.forEach(personaje => {
+      const obj_personaje = new Personaje(personaje.id, personaje.name, personaje.species, personaje.image);
+      serie.agregarPersonajes(obj_personaje);
+      
     });
+ 
   };
+
+  
   const funcionPublica2 = () => {
-    console.log(`Personajes a mostrar: ${cantidadPersonajes}`);
-    // setTimeout(() => {
-      // console.log(`Personajes a mostrar: ${cantidadPersonajes}`);
-    // }, 3000)
+  
+    const cantidad= document.getElementById("cantidad");
+    cantidad.innerHTML=`
+    <h2> ${cantidadPersonajes}</h2>`
+   
   }
   return {
     funcionPublica1,
@@ -52,3 +58,10 @@ llamarPersonajes.funcionPublica1();
 setTimeout(() => {
   llamarPersonajes.funcionPublica2();
 }, 2000);
+
+//ELIMINAR SPINNER
+const borrar=()=>{
+  const borrarSpinner=document.getElementById("borrarSpinner");
+  borrarSpinner.remove();
+};
+borrar();

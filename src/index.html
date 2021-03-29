@@ -3,12 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Template</title>
+<!--CSS de Bootstrap 5.0.0-beta2-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+<title>Rick and Morty</title>
+  <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Shadows Into Light';
+    background-image: url('src/assets/img/stars.jpg');
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    height: 100vh;
+   
+}
+
+
+.tarjetas{
+  padding: 3rem;
+  
+}
+  </style>
+
 </head>
-<body>
-  <div id="app"></div>
+<body >
+  <div class="mx-auto w-25 mt-4">
+   
+    <img src="src/assets/img/Logo.png"  alt="Rick and Morty" class="logo ">
+</div>
+<div class="my-5">
+  <h2 class=" texto text-center mb-5 text-white">Personajes a mostrar: 
+      <span id="cantidad" ></span>
+      <div id="borrarSpinner"class="spinner-border  text-light" role="status">
+          <span class="sr-only"></span>
+      </div>
+  </h2>
+  <div id="resultado" class=" tarjetas row mx-5  text-center"></div>
+  
 
   <!-- <script type="module" src="assets/js/main.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
