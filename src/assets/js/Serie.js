@@ -10,7 +10,8 @@ class Serie {
   const resultado = document.getElementById("resultado");
    resultado.innerHTML += 
    `
-   <div class="card borde-tarjeta " style="width: 18rem;">
+   <div class="col-3 pb-4>
+   <div class="card">
   <img src="${this.personajes.obtenerImagen}" class="rounded-circle card-img-top" alt="...">
   <div class="tarjeta card-body">
     <h5 class="card-title">${this.personajes.obtenerNombre}</h5>
@@ -18,7 +19,7 @@ class Serie {
     <a href="#" class="btn btn-dark ">${this.personajes.obtenerEspecie}</a>
   </div>
 </div> 
-
+</div>
 `
     return this.personajes;
   }
